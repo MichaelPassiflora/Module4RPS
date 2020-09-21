@@ -29,7 +29,8 @@ class ViewController: UIViewController {
     
     enum Winner: String{
         case user = "You Won!"
-        case computer = "You lost"
+        case computer = "Computer lost!"
+        case tie = "Tie!"
     }
     
     
@@ -39,10 +40,11 @@ class ViewController: UIViewController {
         let tappedButton = sender.tag
         switch tappedButton  {
         case 1:
-            break
+            winner.text = (determineWinner(user: .rock, computer: generateComputerGuess())).rawValue
         case 2:
-            break
+            winner.text = (determineWinner(user: .paper, computer: generateComputerGuess())).rawValue
         case 3:
+        winner.text = (determineWinner(user: .scissor, computer: generateComputerGuess())).rawValue
         default:
             print("unknown")
         }
@@ -52,8 +54,38 @@ class ViewController: UIViewController {
     }
     
     func determineWinner(user: Guess, computer: Guess) -> Winner{
-       
-        return .user
+        userGuess.text = "You chose: \(user.rawValue)"
+        
+        computerGuess.text = "Computer chose: \(computer.rawValue)"
+
+        switch user{
+            
+        case .rock:
+            if computer == .paper{
+                return .user
+            } else if computer == .scissor {
+                return .computer
+            } else {
+                return .tie
+            }
+        case .paper:
+            if computer == .scissor{
+                           return .user
+                       } else if computer == .rock {
+                           return .computer
+                       } else {
+                           return .tie
+                       }
+        case .scissor:
+            if computer == .rock{
+                           return .user
+                       } else if computer == .paper {
+                           return .computer
+                       } else {
+                           return .tie
+                       }
+        }
+        
     }
     
 }
