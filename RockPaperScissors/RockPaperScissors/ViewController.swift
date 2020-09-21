@@ -37,14 +37,16 @@ class ViewController: UIViewController {
     let guesses:[Guess] = [.rock, .paper, .scissor]
     
     @IBAction func userGuessed(_ sender: UIButton) {
+       let computerGuess = generateComputerGuess()
+        
         let tappedButton = sender.tag
         switch tappedButton  {
         case 1:
-            winner.text = (determineWinner(user: .rock, computer: generateComputerGuess())).rawValue
+            winner.text = (determineWinner(user: .rock, computer: computerGuess)).rawValue
         case 2:
-            winner.text = (determineWinner(user: .paper, computer: generateComputerGuess())).rawValue
+            winner.text = (determineWinner(user: .paper, computer: computerGuess)).rawValue
         case 3:
-        winner.text = (determineWinner(user: .scissor, computer: generateComputerGuess())).rawValue
+        winner.text = (determineWinner(user: .scissor, computer: computerGuess)).rawValue
         default:
             print("unknown")
         }
