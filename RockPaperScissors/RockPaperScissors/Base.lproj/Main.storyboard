@@ -18,7 +18,9 @@
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tsq-TT-Jvm">
                                 <rect key="frame" x="28" y="667" width="86" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Rock" image="Rock"/>
+                                <state key="normal" title="Rock">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="userChose:" destination="BYZ-38-t0r" eventType="touchUpInside" id="97v-cu-D0m"/>
                                 </connections>
@@ -26,7 +28,9 @@
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNr-e8-WiY">
                                 <rect key="frame" x="148" y="672" width="85" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Paper" image="Paper"/>
+                                <state key="normal" title="Paper">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="userChose:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5mR-nV-nMA"/>
                                 </connections>
@@ -34,7 +38,9 @@
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5r-FK-yVW">
                                 <rect key="frame" x="279" y="672" width="93" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Scissor" image="Scissor"/>
+                                <state key="normal" title="Scissor">
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="userChose:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YuV-rS-2AI"/>
                                 </connections>
@@ -75,9 +81,4 @@
             <point key="canvasLocation" x="-57.971014492753625" y="109.82142857142857"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Paper" width="130" height="94"/>
-        <image name="Rock" width="102" height="90"/>
-        <image name="Scissor" width="128" height="92"/>
-    </resources>
 </document>
