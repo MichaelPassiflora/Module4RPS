@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    enum Guess {
+    enum Guess: String {
         case rock = "Rock"
         case paper = "Paper"
         case scissor = "Scissor"
@@ -34,13 +34,13 @@ class ViewController: UIViewController {
     }
     
     
-    let guesses:[Guess] = [.rock, .paper, .scissor]
+    let guesses:[Guess] = [.rock ,.paper ,.scissor]
     
     @IBAction func userGuessed(_ sender: UIButton) {
        let computerGuess = generateComputerGuess()
         
         let tappedButton = sender.tag
-        switch tappedButton  {
+        switch tappedButton {
         case 1:
             winner.text = (determineWinner(user: .rock, computer: computerGuess)).rawValue
         case 2:
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
     }
     
     func determineWinner(user: Guess, computer: Guess) -> Winner{
-        userGuess.text = "You guessed: \(user.rawValue)"
+        userGuess.text = "You chose: \(user.rawValue)"
         
         computerGuess.text = "Computer guessed: \(computer.rawValue)"
 
@@ -64,25 +64,25 @@ class ViewController: UIViewController {
             
         case .rock:
             if computer == .paper{
-                return .computer
-            } else if computer == .scissor {
                 return .user
+            } else if computer == .scissor {
+                return .computer
             } else {
                 return .tie
             }
         case .paper:
             if computer == .scissor{
-                           return .computer
-                       } else if computer == .rock {
                            return .user
+                       } else if computer == .rock {
+                           return .computer
                        } else {
                            return .tie
                        }
         case .scissor:
             if computer == .rock{
-                           return .computer
-                       } else if computer == .paper {
                            return .user
+                       } else if computer == .paper {
+                           return .computer
                        } else {
                            return .tie
                        }
