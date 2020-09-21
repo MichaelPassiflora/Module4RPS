@@ -56,33 +56,33 @@ class ViewController: UIViewController {
     }
     
     func determineWinner(user: Guess, computer: Guess) -> Winner{
-        userGuess.text = "You chose: \(user.rawValue)"
+        userGuess.text = "You guessed: \(user.rawValue)"
         
-        computerGuess.text = "Computer chose: \(computer.rawValue)"
+        computerGuess.text = "Computer guessed: \(computer.rawValue)"
 
         switch user{
             
         case .rock:
             if computer == .paper{
-                return .user
-            } else if computer == .scissor {
                 return .computer
+            } else if computer == .scissor {
+                return .user
             } else {
                 return .tie
             }
         case .paper:
             if computer == .scissor{
-                           return .user
-                       } else if computer == .rock {
                            return .computer
+                       } else if computer == .rock {
+                           return .user
                        } else {
                            return .tie
                        }
         case .scissor:
             if computer == .rock{
-                           return .user
-                       } else if computer == .paper {
                            return .computer
+                       } else if computer == .paper {
+                           return .user
                        } else {
                            return .tie
                        }
